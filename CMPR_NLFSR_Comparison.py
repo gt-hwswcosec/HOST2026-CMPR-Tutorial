@@ -44,10 +44,6 @@ C128 = CMPR([M61, M31, M19, M17])
 # Here, the library will generate balanced Boolean functions using *at most* 4-input AND alongside *at most* 4-input XOR
 C128.generateChaining(template=old_ANF_template(max_and=4, max_xor=4))
 
-# Print a prettified representation of the state update equations per-bit
-print(C128.pretty_str())
-
-
 # Instantiate a FeedbackRegister object for the CMPR
 # Syntax: FeedbackRegister(list: initial state, CMPR object)
 F = FeedbackRegister([0] + [1]*127, C128)
